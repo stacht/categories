@@ -1,12 +1,12 @@
 <?php
 
-namespace Statch\Categories\Models;
+namespace Stacht\Categories\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\MorphToMany;
 use Kalnoy\Nestedset\NestedSet;
 use Kalnoy\Nestedset\NodeTrait;
-use Statch\Categories\Contracts\Category as CategoryContract;
+use Stacht\Categories\Contracts\Category as CategoryContract;
 
 // use Rinvex\Categories\Builders\EloquentBuilder;
 
@@ -32,7 +32,7 @@ class Category extends Model implements CategoryContract
     {
         parent::__construct($attributes);
 
-        $this->setTable(config('statch-categories.tables.categories'));
+        $this->setTable(config('stacht-categories.tables.categories'));
     }
 
     public static function rules()
@@ -40,7 +40,7 @@ class Category extends Model implements CategoryContract
         return [
             'name' => 'required|string|max:150',
             'description' => 'nullable|string|max:10000',
-            'slug' => 'required|alpha_dash|max:150|unique:'.config('statch-categories.tables.categories').',slug',
+            'slug' => 'required|alpha_dash|max:150|unique:'.config('stacht-categories.tables.categories').',slug',
             NestedSet::LFT => 'sometimes|required|integer',
             NestedSet::RGT => 'sometimes|required|integer',
             NestedSet::PARENT_ID => 'nullable|integer',
@@ -56,7 +56,7 @@ class Category extends Model implements CategoryContract
      */
     public function entries(string $class): MorphToMany
     {
-        return $this->morphedByMany($class, 'categorizable', config('statch-categories.tables.categorizables'), 'category_id', 'categorizable_id');
+        return $this->morphedByMany($class, 'categorizable', config('stacht-categories.tables.categorizables'), 'category_id', 'categorizable_id');
     }
 
     // public function newEloquentBuilder($query)

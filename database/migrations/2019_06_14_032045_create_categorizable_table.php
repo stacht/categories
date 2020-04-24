@@ -11,14 +11,14 @@ class CreateCategorizableTable extends Migration
      */
     public function up()
     {
-        Schema::create(config('statch-categories.tables.categorizables'), function (Blueprint $table) {
+        Schema::create(config('stacht-categories.tables.categorizables'), function (Blueprint $table) {
             $table->unsignedBigInteger('category_id');
             $table->morphs('categorizable');
             $table->timestamps();
 
             // Indexes
             $table->unique(['category_id', 'categorizable_id', 'categorizable_type'], 'categorizables_ids_type_unique');
-            $table->foreign('category_id')->references('id')->on(config('statch-categories.tables.categories'))->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('category_id')->references('id')->on(config('stacht-categories.tables.categories'))->onDelete('cascade')->onUpdate('cascade');
         });
     }
 
@@ -27,6 +27,6 @@ class CreateCategorizableTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists(config('statch-categories.tables.categorizables'));
+        Schema::dropIfExists(config('stacht-categories.tables.categorizables'));
     }
 }

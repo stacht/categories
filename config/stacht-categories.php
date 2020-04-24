@@ -8,6 +8,6 @@ return [
     ],
     // Categories Models
     'models' => [
-        'category' => \Statch\Categories\Models\Category::class,
+        'category' => \Stacht\Categories\Models\Category::class,
     ],
 ];

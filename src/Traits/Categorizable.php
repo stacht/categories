@@ -1,13 +1,13 @@
 <?php
 
-namespace Statch\Categories\Traits;
+namespace Stacht\Categories\Traits;
 
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\MorphToMany;
 use Illuminate\Support\Collection as BaseCollection;
-use Statch\Categories\Contracts\Category;
+use Stacht\Categories\Contracts\Category;
 use Illuminate\Support\Arr;
 
 trait Categorizable
@@ -51,7 +51,7 @@ trait Categorizable
      */
     public function categories(): MorphToMany
     {
-        return $this->morphToMany(config('statch-categories.models.category'), 'categorizable', config('statch-categories.tables.categorizables'), 'categorizable_id', 'category_id')
+        return $this->morphToMany(config('stacht-categories.models.category'), 'categorizable', config('stacht-categories.tables.categorizables'), 'categorizable_id', 'category_id')
                     ->withTimestamps();
     }
 
@@ -249,7 +249,7 @@ trait Categorizable
      * Prepare category IDs.
      *
      * @param mixed                               $categories
-     * @param Statch\Categories\Contracts\Category $category
+     * @param Stacht\Categories\Contracts\Category $category
      *
      * @return array
      */
@@ -262,7 +262,7 @@ trait Categorizable
 
         // Find categories by slug, and get their IDs
         if (\is_string($categories) || (\is_array($categories) && \is_string(Arr::first($categories)))) {
-            $categories = config('statch-categories.categories.category')->whereIn('slug', $categories)->get()->pluck('id');
+            $categories = config('stacht-categories.categories.category')->whereIn('slug', $categories)->get()->pluck('id');
         }
         if ($categories instanceof Model) {
             return [$categories->getKey()];

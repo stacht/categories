@@ -1,13 +1,13 @@
 {
-    "name": "statch/categories",
+    "name": "stacht/categories",
     "description": ":description",
     "license": "MIT",
     "authors": [{
         "name": "Corrado Striuli",
         "email": "corrado.striuli@gmail.com"
     }],
-    "homepage": "https://bitbucket.com/statch/categories",
-    "keywords": ["Laravel", "Categories", "Statch"],
+    "homepage": "https://bitbucket.com/stacht/categories",
+    "keywords": ["Laravel", "Categories", "Stacht"],
     "require": {
         "php": "^7.2",
         "kalnoy/nestedset": "~v5.0.0",
@@ -20,18 +20,18 @@
     },
     "autoload": {
         "psr-4": {
-            "Statch\\Categories\\": "src/"
+            "Stacht\\Categories\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Statch\\Categories\\Tests\\": "tests"
+            "Stacht\\Categories\\Tests\\": "tests"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Statch\\Categories\\CategoriesServiceProvider"
+                "Stacht\\Categories\\CategoriesServiceProvider"
             ]
         }
     }

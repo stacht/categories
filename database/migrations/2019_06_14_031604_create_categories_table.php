@@ -11,7 +11,7 @@ class CreateCategoriesTable extends Migration
      */
     public function up()
     {
-        Schema::create(config('statch-categories.tables.categories'), function (Blueprint $table) {
+        Schema::create(config('stacht-categories.tables.categories'), function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('slug')->unique();
             $table->string('name')->index();
@@ -28,6 +28,6 @@ class CreateCategoriesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists(config('statch-categories.tables.categories'));
+        Schema::dropIfExists(config('stacht-categories.tables.categories'));
     }
 }

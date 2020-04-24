@@ -1,6 +1,6 @@
 <?php
 
-namespace Statch\Categories\Contracts;
+namespace Stacht\Categories\Contracts;
 
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Relations\MorphToMany;

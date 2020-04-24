@@ -1,6 +1,6 @@
 # Laravel Categories
 
-**Statch Categories** is a polymorphic Laravel package, for category management. You can categorize any eloquent model with ease, and utilize the power of **Nested Sets**
+**Stacht Categories** is a polymorphic Laravel package, for category management. You can categorize any eloquent model with ease, and utilize the power of **Nested Sets**
 
 Take a look at [contributing.md](contributing.md) to see a to do list.
 
@@ -9,26 +9,26 @@ Take a look at [contributing.md](contributing.md) to see a to do list.
 Via Composer
 
 ``` bash
-$ composer require statch/categories
+$ composer require stacht/categories
 ```
 
 Publish configuration
 
 ```bash
-$ php artisan vendor:publish --provider="Statch\Categories\CategoriesServiceProvider" --tag="config"
+$ php artisan vendor:publish --provider="Stacht\Categories\CategoriesServiceProvider" --tag="config"
 ```
 
 Publish migration
 
 ```bash
-$ php artisan vendor:publish --provider="Statch\Categories\CategoriesServiceProvider" --tag="migrations"
+$ php artisan vendor:publish --provider="Stacht\Categories\CategoriesServiceProvider" --tag="migrations"
 ```
 
 
 
 ## Usage
 
-To add categories support to your eloquent models simply use `\Statch\Categories\Traits\Categorizable` trait.
+To add categories support to your eloquent models simply use `\Stacht\Categories\Traits\Categorizable` trait.
 
 ### Manage your categories
 
@@ -52,7 +52,7 @@ $post->categories();
 You can attach categories in various ways:
 
 ```php
-use Statch\Categories\Models\Category;
+use Stacht\Categories\Models\Category;
 
 // Single category id
 $post->attachCategories(1);
@@ -89,7 +89,7 @@ $post->attachCategories($categoryInstances);
 And as you may have expected, you can check if categories attached:
 
 ```php
-use Statch\Categories\Models\Category;
+use Stacht\Categories\Models\Category;
 
 // Single category id
 $post->hasAnyCategories(1);
@@ -129,16 +129,16 @@ $post->hasAnyCategories($categoryInstances);
 
 If you need to EXTEND the existing `Category` model note that:
 
-- Your `Category` model needs to extend the `Statch\Categories\Models\Category` model
+- Your `Category` model needs to extend the `Stacht\Categories\Models\Category` model
 
 If you need to REPLACE the existing `Category` model  you need to keep the following things in mind:
 
-- Your `Category` model needs to implement the `Statch\Categories\Contracts\Category` contract
+- Your `Category` model needs to implement the `Stacht\Categories\Contracts\Category` contract
 
 In BOTH cases, whether extending or replacing, you will need to specify your new model in the configuration. To do this you must update the `models` value in the configuration file after publishing the configuration with this command:
 
 ```
-php artisan vendor:publish --provider="Statch\Categories\CategoriesServiceProvider" --tag="config"
+php artisan vendor:publish --provider="Stacht\Categories\CategoriesServiceProvider" --tag="config"
 ```
 
 
@@ -170,5 +170,5 @@ If you discover any security related issues, please email corrado.striuli@gmail.
 
 MIT. Please see the [license file](license.md) for more information.
 
-[link-author]: https://bitbucket.com/statch
+[link-author]: https://bitbucket.com/stacht
 [link-contributors]: ../../contributors

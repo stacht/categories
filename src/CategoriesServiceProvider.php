@@ -1,9 +1,9 @@
 <?php
 
-namespace Statch\Categories;
+namespace Stacht\Categories;
 
 use Illuminate\Support\ServiceProvider;
-use Statch\Categories\Contracts\Category as CategoryContract;
+use Stacht\Categories\Contracts\Category as CategoryContract;
 
 class CategoriesServiceProvider extends ServiceProvider
 {
@@ -19,7 +19,7 @@ class CategoriesServiceProvider extends ServiceProvider
             $this->bootForConsole();
         }
 
-        $this->app->bind(CategoryContract::class, config('statch-categories.models.category'));
+        $this->app->bind(CategoryContract::class, config('stacht-categories.models.category'));
     }
 
     /**
@@ -27,7 +27,7 @@ class CategoriesServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->mergeConfigFrom(__DIR__.'/../config/statch-categories.php', 'statch-categories');
+        $this->mergeConfigFrom(__DIR__.'/../config/stacht-categories.php', 'stacht-categories');
     }
 
     /**
@@ -37,7 +37,7 @@ class CategoriesServiceProvider extends ServiceProvider
     {
         // Publishing the configuration file.
         $this->publishes([
-            __DIR__.'/../config/statch-categories.php' => config_path('statch-categories.php'),
+            __DIR__.'/../config/stacht-categories.php' => config_path('stacht-categories.php'),
         ], 'config');
 
         // Publishing the migration file.
