@@ -12,6 +12,7 @@ class CreateCategorizableTable extends Migration
     public function up()
     {
         Schema::create(config('stacht-categories.tables.categorizables'), function (Blueprint $table) {
+            $table->id();
             $table->unsignedBigInteger('category_id');
             $table->morphs('categorizable');
             $table->timestamps();
