@@ -9,14 +9,14 @@
     "homepage": "https://bitbucket.com/stacht/categories",
     "keywords": ["Laravel", "Categories", "Stacht"],
     "require": {
-        "php": "^7.2",
+        "php": "^7.2|^8.0",
         "kalnoy/nestedset": "~v5.0.0",
-        "illuminate/support": "~5.8.0|^6.0|^7.0"
+        "illuminate/support": "~5.8.0|^6.0|^7.0|^8.0"
     },
     "require-dev": {
-        "phpunit/phpunit" : "^8.0",
+        "phpunit/phpunit" : "^9.1",
         "mockery/mockery": "^1.1",
-        "orchestra/testbench": "~3.8.0|^4.0"
+        "orchestra/testbench": "~3.8.0|^4.0|^6.0"
     },
     "autoload": {
         "psr-4": {
